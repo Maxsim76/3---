@@ -1,0 +1,77 @@
+
+# Online Python - IDE, Editor, Compiler, Interpreter
+import math
+chiclo= int(input("Введите четырёхзначное число: "))
+maxin = -1
+minin = 10
+a = 0
+if chiclo//1000 > 0 and chiclo // 1000 < 10:
+    if chiclo % 2 == 0:
+        print("Число чётное: Да")
+    else:
+        print("Число чётное: Нет")
+    if chiclo % 3 == 0:
+        print("Число кратно трём: Да")
+    else:
+        print("Число кратное трём: Нет")
+    if math.sqrt(chiclo)%1 == 0:
+        print("Число является квадратом числа:", int(math.sqrt(chiclo)))
+    else:
+        print("Число является квадратом числа: Нет")
+
+    print("\n")
+    
+    if chiclo % 10 > maxin:
+        maxin = chiclo % 10
+    if chiclo % 10 < minin:
+        minin = chiclo % 10
+    if chiclo % 10 == 0:
+        a += 1
+
+    if (chiclo % 100)//10 > maxin:
+        maxin = (chiclo % 100)//10
+    if (chiclo % 100)//10 < minin:
+        minin = (chiclo % 100)//10
+    if (chiclo % 100)//10 == 0:
+        a += 1
+        
+    if (chiclo % 1000)//100 > maxin:
+        maxin = (chiclo % 1000)//100
+    if (chiclo % 1000)//100 < minin:
+        minin = (chiclo % 1000)//100
+    if (chiclo % 1000)//100 == 0:
+        a += 1
+
+    if chiclo//1000 > maxin:
+        maxin = chiclo//1000
+    if chiclo//1000 < minin:
+        minin = chiclo//1000
+    if chiclo//1000 == 0:
+        a += 1
+
+    print("Наименьшая цифра числа:", minin)
+    print("Наибольшая цифра числа:", maxin)
+    print("Количество нулей в числе:", a)
+
+    print("\n")
+
+    if math.sqrt(chiclo%10)%1 == 0:
+        print("Цифра в разряде единиц является квадратом цифры:", int(math.sqrt(chiclo%10)))
+    else:
+        print("Цифра в разряде единиц является квадратом цифры: Нет")
+    if math.sqrt((chiclo % 100)//10)%1 == 0:
+        print("Цифра в разряде десятков является квадратом цифры:", int(math.sqrt((chiclo % 100)//10)))
+    else:
+        print("Цифра в разряде десятков является квадратом цифры: Нет")        
+    if math.sqrt((chiclo % 1000)//100)%1 == 0:
+        print("Цифра в разряде сотен является квадратом цифры:", int(math.sqrt((chiclo % 1000)//100)))
+    else:
+        print("Цифра в разряде сотен является квадратом цифры: Нет")
+    if math.sqrt(chiclo//1000)%1 == 0:
+        print("Цифра в разряде тысяч является квадратом цифры:", int(math.sqrt(chiclo//1000)))
+    else:
+        print("Цифра в разряде тысяч является квадратом цифры: Нет")
+
+else:
+    print("Введённое число не является четырёхзначным")
+
